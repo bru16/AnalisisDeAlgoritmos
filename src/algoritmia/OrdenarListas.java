@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class ordenarListas {
+public class OrdenarListas {
     public static void main(String[] args) {
         ArrayList<Integer> A = new ArrayList();
         ArrayList<Integer> B = new ArrayList();
@@ -29,7 +29,7 @@ public class ordenarListas {
         System.out.println("La lista B ORDENADA: " + B.toString());
 
         ArrayList<Integer> C = new ArrayList<Integer>();
-        
+
     }
 
 
