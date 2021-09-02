@@ -3,7 +3,6 @@ package algoritmia;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class OrdenarListas {
     public static void main(String[] args) {
         ArrayList<Integer> A = new ArrayList();
@@ -29,9 +28,7 @@ public class OrdenarListas {
         System.out.println("La lista B ORDENADA: " + B.toString());
 
         ArrayList<Integer> C = new ArrayList<Integer>();
-
     }
-
 
     private static void ordenarListaBubbleSort(ArrayList<Integer> lista) {
         // bubble sort mejorado.
@@ -59,7 +56,7 @@ public class OrdenarListas {
             int j = i - 1;
             while (j >= 0 && lista.get(j) > key) {
                 lista.set(j + 1, lista.get(j));
-                j = j - 1;
+                j--;
             }
             lista.set(j + 1, key);
         }
