@@ -13,43 +13,12 @@ public class Ejercicios {
     static final int TECHO = 100;
 
     public static void main(String[] args) {
-        long inicio = System.nanoTime();
         removerEspacios();
-        long fin = System.nanoTime();
-        double segundos = ((double) (fin - inicio) / 100_000_000);
-        System.out.println("Se tardo: " + segundos + " segundos en remover los espacios en blanco del texto");
-
-        inicio = System.nanoTime();
         lineasImpares();
-        fin = System.nanoTime();
-        segundos = ((double) (fin - inicio) / 100_000_000);
-        System.out.println("Se tardo: " + segundos + " segundos en obtener las lineas impares");
-
-        inicio = System.nanoTime();
         cienNumerosAleatorios();
-        fin = System.nanoTime();
-        segundos = ((double) (fin - inicio) / 100_000_000);
-        System.out.println("Se tardo: " + segundos + " segundos en generar 100 random numbers between -100 and 100");
-
-        inicio = System.nanoTime();
         hashAleatorio();
-        fin = System.nanoTime();
-        segundos = ((double) (fin - inicio) / 100_000_000);
-        System.out.println("Se tardo: " + segundos + " segundos en generar un string alphanumerico");
-
-        inicio = System.nanoTime();
         numerosAleatoriosSinRepeticion();
-        fin = System.nanoTime();
-        segundos = ((double) (fin - inicio) / 100_000_000);
-        System.out.println(
-                "Se tardo: " + segundos + " segundos en generar numeros aleatorios entre 1-1000 sin repeticion");
-
-        inicio = System.nanoTime();
         numerosAleatoriosSinRepeticionV2();
-        fin = System.nanoTime();
-        segundos = ((double) (fin - inicio) / 100_000_000);
-        System.out.println("Se tardo: " + segundos
-                + " segundos en generar numeros aleatorios entre 1-1000 sin repeticion VERSION 2");
     }
 
     private static void removerEspacios() {
@@ -86,7 +55,7 @@ public class Ejercicios {
             while ((linea = buffReader.readLine()) != null) {
                 if (contador % 2 != 0)
                     text += linea + "\n";
-                contador += 1;
+                contador++;
             }
             buffWriter.write(text);
             buffReader.close();
@@ -119,10 +88,10 @@ public class Ejercicios {
             String candidatos = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
             Random random = new Random();
             String hash = "";
-            for (int i = 0; i < 10; i++)
-                hash += candidatos.charAt(random.nextInt(candidatos.length())); // devuelve un char aleatorio entre
-            // posicion de los candidatos 0-17
-            // (A-Z,a-z,0-9)
+
+            for (int i = 0; i < 10; i++) // devuelve un char aleatorio entre             // (A-Z,a-z,0-9)
+                hash += candidatos.charAt(random.nextInt(candidatos.length()));// posicion de los candidatos 0-17
+
             buffWriter.write(hash);
             buffWriter.close();
         } catch (FileNotFoundException ex) {
@@ -144,11 +113,10 @@ public class Ejercicios {
             Random random = new Random();
             int index;
             while (!arr.isEmpty()) {
-                index = random.nextInt(arr.size()); // voy a ir generando un numero random a medida que voy removiendo
-                // de la lista.
+                index = random.nextInt(arr.size()); // voy a ir generando un numero random a medida que voy removiendo de la lista.
                 buffWriter.write(arr.get(index) + "\n");
-                arr.remove(index); // remuevo el numero, por lo que no puede ser repetido. (modifico el size de la
-                // lista)
+                arr.remove(index); // remuevo el numero, por lo que no puede ser repetido. (modifico el size delalista)
+
             }
             buffWriter.close();
         } catch (FileNotFoundException ex) {

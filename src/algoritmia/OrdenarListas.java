@@ -69,9 +69,8 @@ public class OrdenarListas {
         int listaUnoSize = lista1.size();
         int listaDosSize = lista2.size();
 
-        // voy agregando correspondientemente hasta que una haya completado al menos una lista.
-        while (i < listaUnoSize && j < listaDosSize) {
-            if (lista1.get(i) < lista2.get(j)) {
+        while (i < listaUnoSize && j < listaDosSize) {// voy agregando correspondientemente el valor en la nueva lista
+            if (lista1.get(i) < lista2.get(j)) {// hasta que una haya completado al menos una lista
                 listaNueva.add(lista1.get(i));
                 i++;
             } else {
@@ -83,11 +82,10 @@ public class OrdenarListas {
             listaNueva.add(lista1.get(i));// ya que serian mayores a los ya agregados anteriormente
             i++;
         }
-        while (j < listaDosSize) {  // lo mismo aca
+        while (j < listaDosSize) {
             listaNueva.add(lista2.get(j));
             j++;
         }
         return listaNueva;
     }
-
 }
